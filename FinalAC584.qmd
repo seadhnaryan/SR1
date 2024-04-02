@@ -1,0 +1,200 @@
+---
+title: "Global Nourishment"
+subtitle: "Unveiling the Rates of Breastfeeding for Children 20-23 Months Worldwide"
+author: "Seadhna Ryan"
+format:
+  html: 
+    theme: cosmo
+    fontcolor: black
+    backgroundcolor: beige
+    linkcolor: blue
+    toc: true
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Introduction
+In the heart of every community, the act of breastfeeding has long been regarded as a **cornerstone of maternal care, nurturing the bond between mother and child** while providing essential nourishment.Over the past two decades, however, the **landscape of breastfeeding practices has undergone a remarkable transformation**, influenced by shifting cultural norms, advancements in healthcare, and evolving societal attitudes. With these changes, however, **has there been a change in the rates of children being breastfed over the past 20 years**, specifically in developing countries?
+
+
+```{r}
+
+#| label: setup
+#| include: false
+
+# libraries
+library(tidyverse)
+library(plotly)
+
+# data
+unicef_indicator_1_1_ <- read_csv("unicef_indicator_1 (1).csv")
+unicef_indicator_2_1_ <- read_csv("unicef_indicator_2 (1).csv")
+unicef_metadata_1_ <- read_csv("unicef_metadata (1).csv")
+
+# transformations
+  # Converting doubles to characters
+unicef_indicator_2_1_ <- mutate(unicef_indicator_2_1_, time_period = as.character(time_period))
+unicef_metadata_1_ <- mutate(unicef_metadata_1_, year = as.character(year))
+  # Joining data files
+final_data_object <- unicef_indicator_1_1_ %>%
+  full_join(unicef_indicator_2_1_, by = c("country", "alpha_2_code", "alpha_3_code", "numeric_code", "indicator", "time_period",
+                                                "obs_value", "sex", "unit_multiplier", "unit_of_measure", "observation_status", "observation_confidentaility",
+                                                "time_period_activity_related_to_when_the_data_are_collected", "current_age")) %>%
+  full_join(unicef_metadata_1_, by = c("country", "alpha_2_code", "alpha_3_code", "numeric_code", "time_period" = "year"))
+  # Removing unnecessary variables from final data object & changing names of variables
+final_data_object  <- select(final_data_object, -alpha_2_code, -alpha_3_code, -numeric_code, -iso3c)
+
+```
+
+## The Global Breastfeeding Landscape
+```{r}
+#| label: map
+#| fig-cap: "Developing countries often exhibit a **higher rate of breastfeeding** due to a combination of **cultural, economic, and health-related factors**. In many of these nations, breastfeeding is deeply **ingrained in cultural norms and traditions**, passed down through generations. Additionally, **formula milk can be prohibitively expensive** for families in developing economies, making breastfeeding the **more practical and cost-effective option**. Furthermore, access to clean water and proper sanitation, crucial for preparing infant formula safely, may be limited in these regions, further incentivizing breastfeeding. From a health perspective, breastfeeding offers numerous benefits, including **bolstering infants' immune systems** and **reducing the risk of infections**, which can be particularly vital in resource-constrained environments where access to medical care may be limited. Consequently, the prevalence of breastfeeding remains higher in developing countries as a result of these interconnected factors."
+
+map_world <- map_data("world")
+
+# libraries
+library(dplyr)
+library(ggplot2)
+
+# map
+final_data_object %>%
+  filter(indicator == "Continued breastfeeding (20-23 months)") %>%
+  full_join(map_world, by = c("country" = "region")) %>%
+  ggplot(aes(x = long, y = lat, group = group, fill = obs_value)) +
+  geom_polygon(color = "white") +
+  coord_fixed(1.3) +  # adjust the aspect ratio if needed
+  theme_void() +  # removes axis labels and ticks
+  theme(text = element_text(face = "italic")) +  # sets italic font
+  labs(fill = expression(bold("Breastfeeding Rate") ~ italic("(%)")))  # sets legend title with bold and italic parts
+
+```
+
+
+
+## Fluctuations in Breastfeeding Rates over the years
+```{r}
+#| label: timeseries
+#| fig-cap: "From **1985 to 2020**, the average breastfeeding rates in developing countries witnessed a **pattern of fluctuation** influenced by various factors such as **socioeconomic changes, healthcare accessibility, cultural beliefs, and marketing strategies of formula milk companies**. Initially, breastfeeding rates showed a **promising rise** as awareness campaigns and **healthcare initiatives emphasized its benefits**. However, these rates experienced **periodic declines** due to **shifts in societal norms favoring formula feeding**, particularly in urban areas where the convenience of bottle feeding seemed appealing. Despite concerted efforts to promote breastfeeding through policies and education programs, the rates continued to fluctuate, highlighting the ongoing struggle to sustain optimal breastfeeding practices amidst evolving societal and economic landscapes in developing nations. *(If you hover over the line, you can see a more detailed insight into the information)*"
+
+# libraries
+library(dplyr)
+library(ggplot2)
+library(plotly)
+
+# data
+avg_breastfeeding_yearly <- final_data_object %>%
+  filter(indicator == "Continued breastfeeding (20-23 months)") %>%
+  group_by(time_period) %>%
+  summarize(avg_obs_value = mean(obs_value, na.rm = TRUE))
+
+# timeseries
+  # Convert time_period to a Date object
+avg_breastfeeding_yearly$time_period <- as.Date(paste0(avg_breastfeeding_yearly$time_period, "-01-01"))
+
+  # Ensure all years shown from 1986 onwards
+avg_breastfeeding_yearly <- subset(avg_breastfeeding_yearly, time_period >= as.Date("1986-01-01"))
+
+  # Format time_period to display only the year
+avg_breastfeeding_yearly$year <- format(avg_breastfeeding_yearly$time_period, "%Y")
+
+  # Round Avg. Breastfeeding Rate values to 2 decimal places
+avg_breastfeeding_yearly$avg_obs_value <- round(avg_breastfeeding_yearly$avg_obs_value, 2)
+
+  # Create the ggplot object with simplified tooltip
+p <- ggplot(avg_breastfeeding_yearly, aes(x = time_period, y = avg_obs_value, text = paste("Time Period: ", year, "<br>Avg. Breastfeeding Rate (%): ", avg_obs_value), group = 1)) +
+  geom_line(color = "blue", size = 1, linetype = "solid") +
+  labs(x = "Time Period", y = "Average Breastfeeding Rate (%)", title = "<b>Time Series Plot of Avg. Breastfeeding Rates<b>") +
+  theme_minimal()
+
+  # Convert the ggplot object to a plotly object
+p <- ggplotly(p, tooltip = "text")
+
+  # Display the interactive plot
+p
+
+```
+
+
+
+## The Steady Rise of Breastfeeding trends
+```{r}
+#| label: scatterplot
+#| fig-cap: "Over the past three decades, there has been a notable and **steady rise in breastfeeding rates** globally, **driven by** concerted efforts from **healthcare organizations, governments, and advocacy groups** to promote the practice. These initiatives focused on **educating mothers** about the numerous health benefits of breastfeeding for both infants and mothers, as well as **addressing barriers such as lack of support and misinformation**. Additionally, the implementation of supportive policies, such as maternity leave provisions and workplace accommodations for breastfeeding mothers, played a significant role in encouraging breastfeeding continuation. However, the most **significant surge in breastfeeding rates occurred in 2013**, marking a pivotal moment in public health awareness and policy implementation. This spike can be attributed to **heightened global campaigns, increased public discourse, and policy changes** aimed at normalizing breastfeeding and **curbing** aggressive **marketing tactics by formula milk companies**. Furthermore, advancements in research highlighting the long-term health advantages of breastfeeding and the recognition of breastfeeding as a cornerstone of infant nutrition and maternal-child health further propelled this remarkable increase in breastfeeding rates in 2013. *(If you hover over the plots, you can see a more detailed insight into the information)*"
+
+# libraries
+library(ggplot2)
+library(plotly)
+
+# scatterplot
+  # Convert time_period to a Date object
+avg_breastfeeding_yearly$time_period <- as.Date(avg_breastfeeding_yearly$time_period)
+
+  # Format time_period to display only the year (YYYY)
+avg_breastfeeding_yearly$year <- format(avg_breastfeeding_yearly$time_period, "%Y")
+
+  # Round avg_obs_value to two decimal places
+avg_breastfeeding_yearly$avg_obs_value_rounded <- round(avg_breastfeeding_yearly$avg_obs_value, 2)
+
+  # Create the ggplot object with scatterplot
+p <- ggplot(avg_breastfeeding_yearly, aes(x = time_period, y = avg_obs_value,
+                                          text = paste("Time Period: ", year, "<br>",
+                                                       "Avg. Breastfeeding Rate: ", avg_obs_value_rounded, "%"))) +
+  geom_point(color = "blue") +  # Scatterplot
+  labs(x = "Time Period", y = "Average Breastfeeding Rate (%)", title = "<b>Average Breastfeeding Rates in Developing Countries (%)<b>") +
+  theme_minimal()
+
+  # Convert the ggplot object to a plotly object
+p <- ggplotly(p, tooltip = "text", dynamicTicks = TRUE)
+
+  # Fit linear regression
+lm_model <- lm(avg_obs_value ~ time_period, data = avg_breastfeeding_yearly)
+regression_line <- data.frame(time_period = seq(min(avg_breastfeeding_yearly$time_period), max(avg_breastfeeding_yearly$time_period), by = "1 month"),
+                              avg_obs_value = predict(lm_model, data.frame(time_period = seq(min(avg_breastfeeding_yearly$time_period), max(avg_breastfeeding_yearly$time_period), by = "1 month"))))
+
+  # Add linear regression line
+p <- add_trace(p, data = regression_line, x = ~time_period, y = ~avg_obs_value, type = 'scatter', mode = 'lines', line = list(color = 'red'))
+  
+  # Display the interactive plot
+p
+```
+
+
+## Rising GDP's impact on breastfeeding rates
+```{r}
+#| label: barchart
+#| fig-cap: "Despite the significant **increase in average GDP per capita** over the past three decades in developing countries, this economic growth has **not consistently translated** into higher breastfeeding rates. Several factors contribute to this disparity. Firstly, economic growth **does not necessarily address** the underlying **cultural norms and societal attitudes** towards breastfeeding, which can still favor formula feeding due to perceived convenience or social status. Additionally, while economic development may improve access to healthcare and education, **disparities in healthcare infrastructure and accessibility persist**, particularly in rural areas, impacting mothers' ability to receive proper breastfeeding support and guidance. Furthermore, the rise of aggressive marketing strategies by formula milk companies, coupled with inadequate regulation in some regions, undermines breastfeeding promotion efforts despite economic progress. Thus, while **economic growth is undoubtedly essential for overall development**, it alone may **not suffice to overcome the multifaceted barriers hindering optimal breastfeeding practices** in developing countries. *(If you hover over the plots, you can see a more detailed insight into the information)*"
+
+
+
+# libraries
+library(plotly)
+
+# barchart
+  # Convert the column to numeric
+final_data_object$`GDP per capita (constant 2015 US$)` <- as.numeric(final_data_object$`GDP per capita (constant 2015 US$)`)
+
+  # Group by time_period and calculate the average GDP per capita for each year
+avg_gdp_yearly <- final_data_object %>%
+  group_by(time_period) %>%
+  summarize(avg_gdp_value = mean(`GDP per capita (constant 2015 US$)`, na.rm = TRUE))
+
+  # Filter the data to include only values from 1985 onwards
+avg_gdp_yearly <- avg_gdp_yearly[avg_gdp_yearly$time_period >= 1985, ]
+
+  # Create an interactive bar chart with customized tooltips
+plot_ly(data = avg_gdp_yearly, x = ~time_period, y = ~avg_gdp_value, type = 'bar', marker = list(color = 'skyblue'),
+        text = ~paste("Time Period: ", time_period, "<br>",
+                      "Avg. GDP per capita (US$): $", round(avg_gdp_value, 2)), hoverinfo = "text") %>%
+  layout(title = "<b>Average GDP per Capita<b> (US$)",
+         xaxis = list(title = "Year", tickangle = 45, tickmode = "array", tickvals = seq(min(avg_gdp_yearly$time_period), max(avg_gdp_yearly$time_period), by = 5)),
+         yaxis = list(title = "Average GDP per Capita (US$)"))
+
+```
+
+
+## Conclusion
+As suggested by the **consistent rates of children breastfeeding** over the past three decades, it is logical to assume that the **natural phenomenon of breastfeeding is far from over**. As new generations of mothers navigate the complexities of modern parenthood, the legacy of this movement will **continue to shape the future of infant feeding practices**, ensuring that every child has the opportunity to thrive, nourished by the timeless bond between mother and child.
+

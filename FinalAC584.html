@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.550">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Seadhna Ryan">
+
+<title>Global Nourishment</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="FinalAC584_files/libs/clipboard/clipboard.min.js"></script>
+<script src="FinalAC584_files/libs/quarto-html/quarto.js"></script>
+<script src="FinalAC584_files/libs/quarto-html/popper.min.js"></script>
+<script src="FinalAC584_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="FinalAC584_files/libs/quarto-html/anchor.min.js"></script>
+<link href="FinalAC584_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="FinalAC584_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="FinalAC584_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="FinalAC584_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="FinalAC584_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="FinalAC584_files/libs/htmltools-fill-0.5.8/fill.css" rel="stylesheet">
+<script src="FinalAC584_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="FinalAC584_files/libs/plotly-binding-4.10.4/plotly.js"></script>
+<script src="FinalAC584_files/libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="FinalAC584_files/libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="FinalAC584_files/libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="FinalAC584_files/libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+<link href="FinalAC584_files/libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="FinalAC584_files/libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#the-global-breastfeeding-landscape" id="toc-the-global-breastfeeding-landscape" class="nav-link" data-scroll-target="#the-global-breastfeeding-landscape">The Global Breastfeeding Landscape</a></li>
+  <li><a href="#fluctuations-in-breastfeeding-rates-over-the-years" id="toc-fluctuations-in-breastfeeding-rates-over-the-years" class="nav-link" data-scroll-target="#fluctuations-in-breastfeeding-rates-over-the-years">Fluctuations in Breastfeeding Rates over the years</a></li>
+  <li><a href="#the-steady-rise-of-breastfeeding-trends" id="toc-the-steady-rise-of-breastfeeding-trends" class="nav-link" data-scroll-target="#the-steady-rise-of-breastfeeding-trends">The Steady Rise of Breastfeeding trends</a></li>
+  <li><a href="#rising-gdps-impact-on-breastfeeding-rates" id="toc-rising-gdps-impact-on-breastfeeding-rates" class="nav-link" data-scroll-target="#rising-gdps-impact-on-breastfeeding-rates">Rising GDP’s impact on breastfeeding rates</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Global Nourishment</h1>
+<p class="subtitle lead">Unveiling the Rates of Breastfeeding for Children 20-23 Months Worldwide</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Seadhna Ryan </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In the heart of every community, the act of breastfeeding has long been regarded as a <strong>cornerstone of maternal care, nurturing the bond between mother and child</strong> while providing essential nourishment.Over the past two decades, however, the <strong>landscape of breastfeeding practices has undergone a remarkable transformation</strong>, influenced by shifting cultural norms, advancements in healthcare, and evolving societal attitudes. With these changes, however, <strong>has there been a change in the rates of children being breastfed over the past 20 years</strong>, specifically in developing countries?</p>
+</section>
+<section id="the-global-breastfeeding-landscape" class="level2">
+<h2 class="anchored" data-anchor-id="the-global-breastfeeding-landscape">The Global Breastfeeding Landscape</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="FinalAC584_files/figure-html/map-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Developing countries often exhibit a <strong>higher rate of breastfeeding</strong> due to a combination of <strong>cultural, economic, and health-related factors</strong>. In many of these nations, breastfeeding is deeply <strong>ingrained in cultural norms and traditions</strong>, passed down through generations. Additionally, <strong>formula milk can be prohibitively expensive</strong> for families in developing economies, making breastfeeding the <strong>more practical and cost-effective option</strong>. Furthermore, access to clean water and proper sanitation, crucial for preparing infant formula safely, may be limited in these regions, further incentivizing breastfeeding. From a health perspective, breastfeeding offers numerous benefits, including <strong>bolstering infants’ immune systems</strong> and <strong>reducing the risk of infections</strong>, which can be particularly vital in resource-constrained environments where access to medical care may be limited. Consequently, the prevalence of breastfeeding remains higher in developing countries as a result of these interconnected factors.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="fluctuations-in-breastfeeding-rates-over-the-years" class="level2">
+<h2 class="anchored" data-anchor-id="fluctuations-in-breastfeeding-rates-over-the-years">Fluctuations in Breastfeeding Rates over the years</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-2e92bb1c2f81abe0ec91" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-2e92bb1c2f81abe0ec91">{"x":{"data":[{"x":[5844,6209,6574,6940,7305,7670,8035,8401,8766,9131,9496,9862,10227,10592,10957,11323,11688,12053,12418,12784,13149,13514,13879,14245,14610,14975,15340,15706,15752,15872,16071,16436,16801,17167,17532,17572,17623,17787,17827,17897,17969,18120,18135,18207,18262],"y":[27.969999999999999,42.75,45.649999999999999,40.469999999999999,26.300000000000001,43.229999999999997,52.020000000000003,47.590000000000003,48.670000000000002,38.450000000000003,41.299999999999997,49.399999999999999,41.340000000000003,34.68,40.969999999999999,59.939999999999998,33.920000000000002,48.670000000000002,54.539999999999999,31.84,40.119999999999997,38.979999999999997,36.880000000000003,47.920000000000002,42.619999999999997,40.530000000000001,34.119999999999997,39.530000000000001,87.530000000000001,92.099999999999994,37,47.600000000000001,46.229999999999997,39.460000000000001,38.920000000000002,53.399999999999999,23.600000000000001,56.5,27.829999999999998,38.640000000000001,40.729999999999997,52.329999999999998,49.170000000000002,41.270000000000003,31.460000000000001],"text":["Time Period:  1986 <br>Avg. Breastfeeding Rate (%):  27.97","Time Period:  1987 <br>Avg. Breastfeeding Rate (%):  42.75","Time Period:  1988 <br>Avg. Breastfeeding Rate (%):  45.65","Time Period:  1989 <br>Avg. Breastfeeding Rate (%):  40.47","Time Period:  1990 <br>Avg. Breastfeeding Rate (%):  26.3","Time Period:  1991 <br>Avg. Breastfeeding Rate (%):  43.23","Time Period:  1992 <br>Avg. Breastfeeding Rate (%):  52.02","Time Period:  1993 <br>Avg. Breastfeeding Rate (%):  47.59","Time Period:  1994 <br>Avg. Breastfeeding Rate (%):  48.67","Time Period:  1995 <br>Avg. Breastfeeding Rate (%):  38.45","Time Period:  1996 <br>Avg. Breastfeeding Rate (%):  41.3","Time Period:  1997 <br>Avg. Breastfeeding Rate (%):  49.4","Time Period:  1998 <br>Avg. Breastfeeding Rate (%):  41.34","Time Period:  1999 <br>Avg. Breastfeeding Rate (%):  34.68","Time Period:  2000 <br>Avg. Breastfeeding Rate (%):  40.97","Time Period:  2001 <br>Avg. Breastfeeding Rate (%):  59.94","Time Period:  2002 <br>Avg. Breastfeeding Rate (%):  33.92","Time Period:  2003 <br>Avg. Breastfeeding Rate (%):  48.67","Time Period:  2004 <br>Avg. Breastfeeding Rate (%):  54.54","Time Period:  2005 <br>Avg. Breastfeeding Rate (%):  31.84","Time Period:  2006 <br>Avg. Breastfeeding Rate (%):  40.12","Time Period:  2007 <br>Avg. Breastfeeding Rate (%):  38.98","Time Period:  2008 <br>Avg. Breastfeeding Rate (%):  36.88","Time Period:  2009 <br>Avg. Breastfeeding Rate (%):  47.92","Time Period:  2010 <br>Avg. Breastfeeding Rate (%):  42.62","Time Period:  2011 <br>Avg. Breastfeeding Rate (%):  40.53","Time Period:  2012 <br>Avg. Breastfeeding Rate (%):  34.12","Time Period:  2013 <br>Avg. Breastfeeding Rate (%):  39.53","Time Period:  2013 <br>Avg. Breastfeeding Rate (%):  87.53","Time Period:  2013 <br>Avg. Breastfeeding Rate (%):  92.1","Time Period:  2014 <br>Avg. Breastfeeding Rate (%):  37","Time Period:  2015 <br>Avg. Breastfeeding Rate (%):  47.6","Time Period:  2016 <br>Avg. Breastfeeding Rate (%):  46.23","Time Period:  2017 <br>Avg. Breastfeeding Rate (%):  39.46","Time Period:  2018 <br>Avg. Breastfeeding Rate (%):  38.92","Time Period:  2018 <br>Avg. Breastfeeding Rate (%):  53.4","Time Period:  2018 <br>Avg. Breastfeeding Rate (%):  23.6","Time Period:  2018 <br>Avg. Breastfeeding Rate (%):  56.5","Time Period:  2018 <br>Avg. Breastfeeding Rate (%):  27.83","Time Period:  2019 <br>Avg. Breastfeeding Rate (%):  38.64","Time Period:  2019 <br>Avg. Breastfeeding Rate (%):  40.73","Time Period:  2019 <br>Avg. Breastfeeding Rate (%):  52.33","Time Period:  2019 <br>Avg. Breastfeeding Rate (%):  49.17","Time Period:  2019 <br>Avg. Breastfeeding Rate (%):  41.27","Time Period:  2020 <br>Avg. Breastfeeding Rate (%):  31.46"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(0,0,255,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":43.762557077625573,"r":7.3059360730593621,"b":40.182648401826491,"l":37.260273972602747},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"<b>Time Series Plot of Avg. Breastfeeding Rates<b>","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[5223.1000000000004,18882.900000000001],"tickmode":"array","ticktext":["1990","2000","2010","2020"],"tickvals":[7305,10957,14610,18262],"categoryorder":"array","categoryarray":["1990","2000","2010","2020"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Time Period","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[20.175000000000001,95.524999999999991],"tickmode":"array","ticktext":["40","60","80"],"tickvals":[40,60,80],"categoryorder":"array","categoryarray":["40","60","80"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Average Breastfeeding Rate (%)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"9c356576ee4":{"x":{},"y":{},"text":{},"type":"scatter"}},"cur_data":"9c356576ee4","visdat":{"9c356576ee4":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<p>From <strong>1985 to 2020</strong>, the average breastfeeding rates in developing countries witnessed a <strong>pattern of fluctuation</strong> influenced by various factors such as <strong>socioeconomic changes, healthcare accessibility, cultural beliefs, and marketing strategies of formula milk companies</strong>. Initially, breastfeeding rates showed a <strong>promising rise</strong> as awareness campaigns and <strong>healthcare initiatives emphasized its benefits</strong>. However, these rates experienced <strong>periodic declines</strong> due to <strong>shifts in societal norms favoring formula feeding</strong>, particularly in urban areas where the convenience of bottle feeding seemed appealing. Despite concerted efforts to promote breastfeeding through policies and education programs, the rates continued to fluctuate, highlighting the ongoing struggle to sustain optimal breastfeeding practices amidst evolving societal and economic landscapes in developing nations. <em>(If you hover over the line, you can see a more detailed insight into the information)</em></p>
+</div>
+</div>
+</section>
+<section id="the-steady-rise-of-breastfeeding-trends" class="level2">
+<h2 class="anchored" data-anchor-id="the-steady-rise-of-breastfeeding-trends">The Steady Rise of Breastfeeding trends</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-36b0c2446e17da41b44c" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-36b0c2446e17da41b44c">{"x":{"data":[{"x":["1986-01-01","1987-01-01","1988-01-01","1989-01-01","1990-01-01","1991-01-01","1992-01-01","1993-01-01","1994-01-01","1995-01-01","1996-01-01","1997-01-01","1998-01-01","1999-01-01","2000-01-01","2001-01-01","2002-01-01","2003-01-01","2004-01-01","2005-01-01","2006-01-01","2007-01-01","2008-01-01","2009-01-01","2010-01-01","2011-01-01","2012-01-01","2013-01-01","2013-02-16","2013-06-16","2014-01-01","2015-01-01","2016-01-01","2017-01-01","2018-01-01","2018-02-10","2018-04-02","2018-09-13","2018-10-23","2019-01-01","2019-03-14","2019-08-12","2019-08-27","2019-11-07","2020-01-01"],"y":[27.969999999999999,42.75,45.649999999999999,40.469999999999999,26.300000000000001,43.229999999999997,52.020000000000003,47.590000000000003,48.670000000000002,38.450000000000003,41.299999999999997,49.399999999999999,41.340000000000003,34.68,40.969999999999999,59.939999999999998,33.920000000000002,48.670000000000002,54.539999999999999,31.84,40.119999999999997,38.979999999999997,36.880000000000003,47.920000000000002,42.619999999999997,40.530000000000001,34.119999999999997,39.530000000000001,87.530000000000001,92.099999999999994,37,47.600000000000001,46.229999999999997,39.460000000000001,38.920000000000002,53.399999999999999,23.600000000000001,56.5,27.829999999999998,38.640000000000001,40.729999999999997,52.329999999999998,49.170000000000002,41.270000000000003,31.460000000000001],"text":["Time Period:  1986 <br> Avg. Breastfeeding Rate:  27.97 %","Time Period:  1987 <br> Avg. Breastfeeding Rate:  42.75 %","Time Period:  1988 <br> Avg. Breastfeeding Rate:  45.65 %","Time Period:  1989 <br> Avg. Breastfeeding Rate:  40.47 %","Time Period:  1990 <br> Avg. Breastfeeding Rate:  26.3 %","Time Period:  1991 <br> Avg. Breastfeeding Rate:  43.23 %","Time Period:  1992 <br> Avg. Breastfeeding Rate:  52.02 %","Time Period:  1993 <br> Avg. Breastfeeding Rate:  47.59 %","Time Period:  1994 <br> Avg. Breastfeeding Rate:  48.67 %","Time Period:  1995 <br> Avg. Breastfeeding Rate:  38.45 %","Time Period:  1996 <br> Avg. Breastfeeding Rate:  41.3 %","Time Period:  1997 <br> Avg. Breastfeeding Rate:  49.4 %","Time Period:  1998 <br> Avg. Breastfeeding Rate:  41.34 %","Time Period:  1999 <br> Avg. Breastfeeding Rate:  34.68 %","Time Period:  2000 <br> Avg. Breastfeeding Rate:  40.97 %","Time Period:  2001 <br> Avg. Breastfeeding Rate:  59.94 %","Time Period:  2002 <br> Avg. Breastfeeding Rate:  33.92 %","Time Period:  2003 <br> Avg. Breastfeeding Rate:  48.67 %","Time Period:  2004 <br> Avg. Breastfeeding Rate:  54.54 %","Time Period:  2005 <br> Avg. Breastfeeding Rate:  31.84 %","Time Period:  2006 <br> Avg. Breastfeeding Rate:  40.12 %","Time Period:  2007 <br> Avg. Breastfeeding Rate:  38.98 %","Time Period:  2008 <br> Avg. Breastfeeding Rate:  36.88 %","Time Period:  2009 <br> Avg. Breastfeeding Rate:  47.92 %","Time Period:  2010 <br> Avg. Breastfeeding Rate:  42.62 %","Time Period:  2011 <br> Avg. Breastfeeding Rate:  40.53 %","Time Period:  2012 <br> Avg. Breastfeeding Rate:  34.12 %","Time Period:  2013 <br> Avg. Breastfeeding Rate:  39.53 %","Time Period:  2013 <br> Avg. Breastfeeding Rate:  87.53 %","Time Period:  2013 <br> Avg. Breastfeeding Rate:  92.1 %","Time Period:  2014 <br> Avg. Breastfeeding Rate:  37 %","Time Period:  2015 <br> Avg. Breastfeeding Rate:  47.6 %","Time Period:  2016 <br> Avg. Breastfeeding Rate:  46.23 %","Time Period:  2017 <br> Avg. Breastfeeding Rate:  39.46 %","Time Period:  2018 <br> Avg. Breastfeeding Rate:  38.92 %","Time Period:  2018 <br> Avg. Breastfeeding Rate:  53.4 %","Time Period:  2018 <br> Avg. Breastfeeding Rate:  23.6 %","Time Period:  2018 <br> Avg. Breastfeeding Rate:  56.5 %","Time Period:  2018 <br> Avg. Breastfeeding Rate:  27.83 %","Time Period:  2019 <br> Avg. Breastfeeding Rate:  38.64 %","Time Period:  2019 <br> Avg. Breastfeeding Rate:  40.73 %","Time Period:  2019 <br> Avg. Breastfeeding Rate:  52.33 %","Time Period:  2019 <br> Avg. Breastfeeding Rate:  49.17 %","Time Period:  2019 <br> Avg. Breastfeeding Rate:  41.27 %","Time Period:  2020 <br> Avg. Breastfeeding Rate:  31.46 %"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,0,255,1)","opacity":1,"size":5.6692913385826778,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,0,255,1)"}},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":["1986-01-01","1986-02-01","1986-03-01","1986-04-01","1986-05-01","1986-06-01","1986-07-01","1986-08-01","1986-09-01","1986-10-01","1986-11-01","1986-12-01","1987-01-01","1987-02-01","1987-03-01","1987-04-01","1987-05-01","1987-06-01","1987-07-01","1987-08-01","1987-09-01","1987-10-01","1987-11-01","1987-12-01","1988-01-01","1988-02-01","1988-03-01","1988-04-01","1988-05-01","1988-06-01","1988-07-01","1988-08-01","1988-09-01","1988-10-01","1988-11-01","1988-12-01","1989-01-01","1989-02-01","1989-03-01","1989-04-01","1989-05-01","1989-06-01","1989-07-01","1989-08-01","1989-09-01","1989-10-01","1989-11-01","1989-12-01","1990-01-01","1990-02-01","1990-03-01","1990-04-01","1990-05-01","1990-06-01","1990-07-01","1990-08-01","1990-09-01","1990-10-01","1990-11-01","1990-12-01","1991-01-01","1991-02-01","1991-03-01","1991-04-01","1991-05-01","1991-06-01","1991-07-01","1991-08-01","1991-09-01","1991-10-01","1991-11-01","1991-12-01","1992-01-01","1992-02-01","1992-03-01","1992-04-01","1992-05-01","1992-06-01","1992-07-01","1992-08-01","1992-09-01","1992-10-01","1992-11-01","1992-12-01","1993-01-01","1993-02-01","1993-03-01","1993-04-01","1993-05-01","1993-06-01","1993-07-01","1993-08-01","1993-09-01","1993-10-01","1993-11-01","1993-12-01","1994-01-01","1994-02-01","1994-03-01","1994-04-01","1994-05-01","1994-06-01","1994-07-01","1994-08-01","1994-09-01","1994-10-01","1994-11-01","1994-12-01","1995-01-01","1995-02-01","1995-03-01","1995-04-01","1995-05-01","1995-06-01","1995-07-01","1995-08-01","1995-09-01","1995-10-01","1995-11-01","1995-12-01","1996-01-01","1996-02-01","1996-03-01","1996-04-01","1996-05-01","1996-06-01","1996-07-01","1996-08-01","1996-09-01","1996-10-01","1996-11-01","1996-12-01","1997-01-01","1997-02-01","1997-03-01","1997-04-01","1997-05-01","1997-06-01","1997-07-01","1997-08-01","1997-09-01","1997-10-01","1997-11-01","1997-12-01","1998-01-01","1998-02-01","1998-03-01","1998-04-01","1998-05-01","1998-06-01","1998-07-01","1998-08-01","1998-09-01","1998-10-01","1998-11-01","1998-12-01","1999-01-01","1999-02-01","1999-03-01","1999-04-01","1999-05-01","1999-06-01","1999-07-01","1999-08-01","1999-09-01","1999-10-01","1999-11-01","1999-12-01","2000-01-01","2000-02-01","2000-03-01","2000-04-01","2000-05-01","2000-06-01","2000-07-01","2000-08-01","2000-09-01","2000-10-01","2000-11-01","2000-12-01","2001-01-01","2001-02-01","2001-03-01","2001-04-01","2001-05-01","2001-06-01","2001-07-01","2001-08-01","2001-09-01","2001-10-01","2001-11-01","2001-12-01","2002-01-01","2002-02-01","2002-03-01","2002-04-01","2002-05-01","2002-06-01","2002-07-01","2002-08-01","2002-09-01","2002-10-01","2002-11-01","2002-12-01","2003-01-01","2003-02-01","2003-03-01","2003-04-01","2003-05-01","2003-06-01","2003-07-01","2003-08-01","2003-09-01","2003-10-01","2003-11-01","2003-12-01","2004-01-01","2004-02-01","2004-03-01","2004-04-01","2004-05-01","2004-06-01","2004-07-01","2004-08-01","2004-09-01","2004-10-01","2004-11-01","2004-12-01","2005-01-01","2005-02-01","2005-03-01","2005-04-01","2005-05-01","2005-06-01","2005-07-01","2005-08-01","2005-09-01","2005-10-01","2005-11-01","2005-12-01","2006-01-01","2006-02-01","2006-03-01","2006-04-01","2006-05-01","2006-06-01","2006-07-01","2006-08-01","2006-09-01","2006-10-01","2006-11-01","2006-12-01","2007-01-01","2007-02-01","2007-03-01","2007-04-01","2007-05-01","2007-06-01","2007-07-01","2007-08-01","2007-09-01","2007-10-01","2007-11-01","2007-12-01","2008-01-01","2008-02-01","2008-03-01","2008-04-01","2008-05-01","2008-06-01","2008-07-01","2008-08-01","2008-09-01","2008-10-01","2008-11-01","2008-12-01","2009-01-01","2009-02-01","2009-03-01","2009-04-01","2009-05-01","2009-06-01","2009-07-01","2009-08-01","2009-09-01","2009-10-01","2009-11-01","2009-12-01","2010-01-01","2010-02-01","2010-03-01","2010-04-01","2010-05-01","2010-06-01","2010-07-01","2010-08-01","2010-09-01","2010-10-01","2010-11-01","2010-12-01","2011-01-01","2011-02-01","2011-03-01","2011-04-01","2011-05-01","2011-06-01","2011-07-01","2011-08-01","2011-09-01","2011-10-01","2011-11-01","2011-12-01","2012-01-01","2012-02-01","2012-03-01","2012-04-01","2012-05-01","2012-06-01","2012-07-01","2012-08-01","2012-09-01","2012-10-01","2012-11-01","2012-12-01","2013-01-01","2013-02-01","2013-03-01","2013-04-01","2013-05-01","2013-06-01","2013-07-01","2013-08-01","2013-09-01","2013-10-01","2013-11-01","2013-12-01","2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01","2019-12-01","2020-01-01"],"y":[41.413029188177994,41.423300847156582,41.432578474621117,41.442850133599713,41.452790448740281,41.463062107718869,41.473002422859444,41.483274081838033,41.493545740816622,41.503486055957197,41.513757714935785,41.523698030076353,41.533969689054949,41.544241348033538,41.553518975498072,41.563790634476661,41.573730949617229,41.584002608595824,41.593942923736392,41.604214582714981,41.614486241693577,41.624426556834145,41.634698215812733,41.644638530953308,41.654910189931897,41.665181848910485,41.67479082021304,41.685062479191629,41.695002794332204,41.705274453310793,41.715214768451361,41.725486427429956,41.735758086408545,41.745698401549113,41.755970060527709,41.765910375668277,41.776182034646865,41.786453693625461,41.795731321089988,41.806002980068584,41.815943295209152,41.826214954187741,41.836155269328316,41.846426928306904,41.856698587285493,41.866638902426068,41.876910561404657,41.886850876545232,41.89712253552382,41.907394194502409,41.916671821966943,41.926943480945532,41.936883796086107,41.947155455064696,41.957095770205264,41.967367429183859,41.977639088162448,41.987579403303016,41.997851062281612,42.00779137742218,42.018063036400768,42.028334695379357,42.037612322843891,42.047883981822487,42.057824296963055,42.068095955941644,42.078036271082219,42.088307930060807,42.098579589039396,42.108519904179971,42.11879156315856,42.128731878299128,42.139003537277723,42.149275196256312,42.158884167558867,42.169155826537455,42.179096141678023,42.189367800656619,42.199308115797187,42.209579774775776,42.219851433754371,42.229791748894939,42.240063407873528,42.250003723014103,42.260275381992692,42.27054704097128,42.279824668435815,42.290096327414403,42.300036642554979,42.310308301533567,42.320248616674135,42.330520275652731,42.340791934631319,42.350732249771887,42.361003908750483,42.370944223891051,42.38121588286964,42.391487541848235,42.400765169312763,42.411036828291358,42.420977143431926,42.431248802410515,42.44118911755109,42.451460776529679,42.461732435508267,42.471672750648843,42.481944409627431,42.491884724768006,42.502156383746595,42.512428042725183,42.521705670189718,42.531977329168306,42.541917644308882,42.55218930328747,42.562129618428038,42.572401277406634,42.582672936385222,42.59261325152579,42.602884910504386,42.612825225644954,42.623096884623543,42.633368543602131,42.642977514904686,42.653249173883275,42.66318948902385,42.673461148002438,42.683401463143014,42.693673122121602,42.703944781100191,42.713885096240759,42.724156755219354,42.734097070359923,42.744368729338518,42.754640388317107,42.763918015781641,42.77418967476023,42.784129989900798,42.794401648879393,42.804341964019962,42.81461362299855,42.824885281977146,42.834825597117714,42.845097256096302,42.855037571236878,42.865309230215466,42.875580889194055,42.884858516658589,42.895130175637178,42.905070490777753,42.915342149756341,42.92528246489691,42.935554123875505,42.945825782854094,42.955766097994662,42.966037756973257,42.975978072113826,42.986249731092414,42.99652139007101,43.005799017535537,43.016070676514133,43.026010991654701,43.036282650633289,43.046222965773865,43.056494624752453,43.066766283731042,43.076706598871617,43.086978257850205,43.096918572990781,43.107190231969369,43.117461890947958,43.127070862250513,43.137342521229101,43.147282836369669,43.157554495348265,43.167494810488833,43.177766469467421,43.188038128446017,43.197978443586585,43.208250102565174,43.218190417705749,43.228462076684337,43.238733735662926,43.248011363127461,43.258283022106049,43.268223337246624,43.278494996225213,43.288435311365788,43.298706970344377,43.308978629322965,43.318918944463533,43.329190603442129,43.339130918582697,43.349402577561293,43.359674236539881,43.368951864004416,43.379223522983004,43.389163838123572,43.399435497102168,43.409375812242736,43.419647471221325,43.42991913019992,43.439859445340488,43.450131104319077,43.460071419459652,43.470343078438241,43.480614737416829,43.489892364881364,43.500164023859952,43.510104339000527,43.520375997979116,43.530316313119684,43.54058797209828,43.550859631076868,43.560799946217436,43.571071605196032,43.5810119203366,43.591283579315188,43.601555238293784,43.611164209596332,43.62143586857492,43.631376183715496,43.641647842694084,43.651588157834659,43.661859816813248,43.672131475791836,43.682071790932412,43.692343449911,43.702283765051568,43.712555424030164,43.722827083008752,43.732104710473287,43.742376369451875,43.752316684592444,43.762588343571039,43.772528658711607,43.782800317690196,43.793071976668791,43.80301229180936,43.813283950787948,43.823224265928523,43.833495924907112,43.8437675838857,43.853045211350235,43.863316870328823,43.873257185469399,43.883528844447987,43.893469159588562,43.903740818567151,43.914012477545739,43.923952792686308,43.934224451664903,43.944164766805471,43.954436425784067,43.964708084762655,43.97398571222719,43.984257371205778,43.994197686346347,44.004469345324935,44.01440966046551,44.024681319444099,44.034952978422695,44.044893293563263,44.055164952541851,44.065105267682426,44.075376926661015,44.085648585639603,44.095257556942158,44.105529215920747,44.115469531061322,44.125741190039911,44.135681505180479,44.145953164159067,44.156224823137663,44.166165138278231,44.176436797256827,44.186377112397395,44.196648771375983,44.206920430354572,44.216198057819106,44.226469716797695,44.23641003193827,44.246681690916859,44.256622006057434,44.266893665036022,44.277165324014611,44.287105639155186,44.297377298133775,44.307317613274343,44.317589272252938,44.327860931231527,44.337138558696061,44.34741021767465,44.357350532815218,44.367622191793814,44.377562506934382,44.38783416591297,44.398105824891566,44.408046140032134,44.418317799010723,44.428258114151298,44.438529773129886,44.448801432108475,44.458079059573009,44.468350718551598,44.478291033692173,44.488562692670762,44.498503007811337,44.508774666789925,44.519046325768514,44.528986640909082,44.539258299887678,44.549198615028246,44.559470274006841,44.56974193298543,44.579350904287978,44.589622563266573,44.599562878407141,44.60983453738573,44.619774852526305,44.630046511504894,44.640318170483482,44.650258485624057,44.660530144602646,44.670470459743214,44.68074211872181,44.691013777700398,44.700291405164933,44.710563064143521,44.720503379284096,44.730775038262685,44.740715353403253,44.750987012381842,44.761258671360437,44.771198986501005,44.781470645479601,44.791410960620169,44.801682619598758,44.811954278577346,44.821231906041881,44.831503565020469,44.841443880161044,44.851715539139633,44.861655854280208,44.871927513258797,44.882199172237385,44.89213948737796,44.902411146356549,44.912351461497117,44.922623120475713,44.932894779454301,44.942172406918836,44.952444065897424,44.962384381037992,44.972656040016588,44.982596355157156,44.992868014135745,45.00313967311434,45.013079988254908,45.023351647233497,45.033291962374072,45.043563621352661,45.053835280331249,45.063444251633804,45.073715910612393,45.083656225752968,45.093927884731556,45.103868199872124,45.11413985885072,45.124411517829309,45.134351832969877,45.144623491948472,45.15456380708904,45.164835466067629,45.175107125046225,45.184384752510752,45.194656411489348,45.204596726629916,45.214868385608504,45.22480870074908,45.235080359727668,45.245352018706257,45.255292333846832,45.26556399282542,45.275504307965988,45.285775966944584,45.296047625923173,45.305325253387707,45.315596912366296,45.325537227506871,45.335808886485459,45.345749201626028,45.356020860604616,45.366292519583212,45.37623283472378,45.386504493702375,45.396444808842944,45.406716467821532,45.416988126800121,45.426265754264655,45.436537413243244,45.446477728383819,45.456749387362407,45.466689702502983,45.476961361481571,45.48723302046016,45.497173335600735,45.507444994579323,45.517385309719891,45.527656968698487],"text":{},"type":"scatter","mode":"lines","line":{"color":"red"},"marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"layout":{"margin":{"t":43.762557077625573,"r":7.3059360730593621,"b":40.182648401826491,"l":37.260273972602747},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"<b>Average Breastfeeding Rates in Developing Countries (%)<b>","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"date","autorange":true,"range":["1984-04-20","2021-09-12"],"tickmode":"auto","ticktext":["1990","2000","2010","2020"],"tickvals":[7305,10957,14610,18262],"categoryorder":"array","categoryarray":["1990","2000","2010","2020"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Time Period","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":true,"range":[20.175000000000001,95.524999999999991],"tickmode":"auto","ticktext":["40","60","80"],"tickvals":[40,60,80],"categoryorder":"array","categoryarray":["40","60","80"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Average Breastfeeding Rate (%)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"9c3137083cd":{"x":{},"y":{},"text":{},"type":"scatter"},"9c37090e224":{"x":{},"y":{},"text":{},"type":"scatter","mode":"lines","line":{"color":"red"},"inherit":true}},"cur_data":"9c37090e224","visdat":{"9c3137083cd":["function (y) ","x"],"9c37090e224":["function () ","data"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<p>Over the past three decades, there has been a notable and <strong>steady rise in breastfeeding rates</strong> globally, <strong>driven by</strong> concerted efforts from <strong>healthcare organizations, governments, and advocacy groups</strong> to promote the practice. These initiatives focused on <strong>educating mothers</strong> about the numerous health benefits of breastfeeding for both infants and mothers, as well as <strong>addressing barriers such as lack of support and misinformation</strong>. Additionally, the implementation of supportive policies, such as maternity leave provisions and workplace accommodations for breastfeeding mothers, played a significant role in encouraging breastfeeding continuation. However, the most <strong>significant surge in breastfeeding rates occurred in 2013</strong>, marking a pivotal moment in public health awareness and policy implementation. This spike can be attributed to <strong>heightened global campaigns, increased public discourse, and policy changes</strong> aimed at normalizing breastfeeding and <strong>curbing</strong> aggressive <strong>marketing tactics by formula milk companies</strong>. Furthermore, advancements in research highlighting the long-term health advantages of breastfeeding and the recognition of breastfeeding as a cornerstone of infant nutrition and maternal-child health further propelled this remarkable increase in breastfeeding rates in 2013. <em>(If you hover over the plots, you can see a more detailed insight into the information)</em></p>
+</div>
+</div>
+</section>
+<section id="rising-gdps-impact-on-breastfeeding-rates" class="level2">
+<h2 class="anchored" data-anchor-id="rising-gdps-impact-on-breastfeeding-rates">Rising GDP’s impact on breastfeeding rates</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-c65e3096b74b16eb05a3" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-c65e3096b74b16eb05a3">{"x":{"visdat":{"9c348ea6841":["function () ","plotlyVisDat"]},"cur_data":"9c348ea6841","attrs":{"9c348ea6841":{"x":{},"y":{},"marker":{"color":"skyblue"},"text":{},"hoverinfo":"text","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"<b>Average GDP per Capita<b> (US$)","xaxis":{"domain":[0,1],"automargin":true,"title":"Year","tickangle":45,"tickmode":"array","tickvals":[1985,1990,1995,2000,2005,2010,2015,2020]},"yaxis":{"domain":[0,1],"automargin":true,"title":"Average GDP per Capita (US$)"},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":["1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022"],"y":[9941.4646702657319,9952.8564925877217,10001.635257339725,10182.51862530586,10398.186953851258,10214.699206183206,10204.100505733675,10249.827153883254,10276.976763972163,10389.130408222816,11153.731773097203,11017.752667016375,11304.38407319808,11547.168043205676,11518.966815330507,9174.0460327097171,12051.699680726884,12276.35316671277,12096.251636017745,12998.309120418608,12188.234795432894,11054.447672644957,14077.589278718242,13975.689107425334,13424.714501592507,11946.6412205709,13191.911625891113,13964.281023958509,13854.412879628799,12502.148452079189,14136.345780140635,12611.166169260146,13495.540787781689,12589.595715972015,12657.599740565915,14505.452040574526,15574.987701423994,16523.613797797378],"marker":{"color":"skyblue","line":{"color":"rgba(31,119,180,1)"}},"text":["Time Period:  1985 <br> Avg. GDP per capita (US$): $ 9941.46","Time Period:  1986 <br> Avg. GDP per capita (US$): $ 9952.86","Time Period:  1987 <br> Avg. GDP per capita (US$): $ 10001.64","Time Period:  1988 <br> Avg. GDP per capita (US$): $ 10182.52","Time Period:  1989 <br> Avg. GDP per capita (US$): $ 10398.19","Time Period:  1990 <br> Avg. GDP per capita (US$): $ 10214.7","Time Period:  1991 <br> Avg. GDP per capita (US$): $ 10204.1","Time Period:  1992 <br> Avg. GDP per capita (US$): $ 10249.83","Time Period:  1993 <br> Avg. GDP per capita (US$): $ 10276.98","Time Period:  1994 <br> Avg. GDP per capita (US$): $ 10389.13","Time Period:  1995 <br> Avg. GDP per capita (US$): $ 11153.73","Time Period:  1996 <br> Avg. GDP per capita (US$): $ 11017.75","Time Period:  1997 <br> Avg. GDP per capita (US$): $ 11304.38","Time Period:  1998 <br> Avg. GDP per capita (US$): $ 11547.17","Time Period:  1999 <br> Avg. GDP per capita (US$): $ 11518.97","Time Period:  2000 <br> Avg. GDP per capita (US$): $ 9174.05","Time Period:  2001 <br> Avg. GDP per capita (US$): $ 12051.7","Time Period:  2002 <br> Avg. GDP per capita (US$): $ 12276.35","Time Period:  2003 <br> Avg. GDP per capita (US$): $ 12096.25","Time Period:  2004 <br> Avg. GDP per capita (US$): $ 12998.31","Time Period:  2005 <br> Avg. GDP per capita (US$): $ 12188.23","Time Period:  2006 <br> Avg. GDP per capita (US$): $ 11054.45","Time Period:  2007 <br> Avg. GDP per capita (US$): $ 14077.59","Time Period:  2008 <br> Avg. GDP per capita (US$): $ 13975.69","Time Period:  2009 <br> Avg. GDP per capita (US$): $ 13424.71","Time Period:  2010 <br> Avg. GDP per capita (US$): $ 11946.64","Time Period:  2011 <br> Avg. GDP per capita (US$): $ 13191.91","Time Period:  2012 <br> Avg. GDP per capita (US$): $ 13964.28","Time Period:  2013 <br> Avg. GDP per capita (US$): $ 13854.41","Time Period:  2014 <br> Avg. GDP per capita (US$): $ 12502.15","Time Period:  2015 <br> Avg. GDP per capita (US$): $ 14136.35","Time Period:  2016 <br> Avg. GDP per capita (US$): $ 12611.17","Time Period:  2017 <br> Avg. GDP per capita (US$): $ 13495.54","Time Period:  2018 <br> Avg. GDP per capita (US$): $ 12589.6","Time Period:  2019 <br> Avg. GDP per capita (US$): $ 12657.6","Time Period:  2020 <br> Avg. GDP per capita (US$): $ 14505.45","Time Period:  2021 <br> Avg. GDP per capita (US$): $ 15574.99","Time Period:  2022 <br> Avg. GDP per capita (US$): $ 16523.61"],"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<p>Despite the significant <strong>increase in average GDP per capita</strong> over the past three decades in developing countries, this economic growth has <strong>not consistently translated</strong> into higher breastfeeding rates. Several factors contribute to this disparity. Firstly, economic growth <strong>does not necessarily address</strong> the underlying <strong>cultural norms and societal attitudes</strong> towards breastfeeding, which can still favor formula feeding due to perceived convenience or social status. Additionally, while economic development may improve access to healthcare and education, <strong>disparities in healthcare infrastructure and accessibility persist</strong>, particularly in rural areas, impacting mothers’ ability to receive proper breastfeeding support and guidance. Furthermore, the rise of aggressive marketing strategies by formula milk companies, coupled with inadequate regulation in some regions, undermines breastfeeding promotion efforts despite economic progress. Thus, while <strong>economic growth is undoubtedly essential for overall development</strong>, it alone may <strong>not suffice to overcome the multifaceted barriers hindering optimal breastfeeding practices</strong> in developing countries. <em>(If you hover over the plots, you can see a more detailed insight into the information)</em></p>
+</div>
+</div>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>As suggested by the <strong>consistent rates of children breastfeeding</strong> over the past three decades, it is logical to assume that the <strong>natural phenomenon of breastfeeding is far from over</strong>. As new generations of mothers navigate the complexities of modern parenthood, the legacy of this movement will <strong>continue to shape the future of infant feeding practices</strong>, ensuring that every child has the opportunity to thrive, nourished by the timeless bond between mother and child.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
